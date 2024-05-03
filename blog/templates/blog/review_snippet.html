@@ -1,0 +1,17 @@
+<div class="review">
+    <!-- Presentation -->
+    <h3>{{ review.ticket.title }}</h3>
+    <p>Review Title: {{ review.headline }}</p>
+    <p>Review Body: {{ review.body }}</p>
+    <p>Rating: {{ review.rating }}</p>
+    <p>User: {{ review.user }}</p>
+    <p>Created on: {{ review.time_created }}</p>
+    
+    <!-- Edit Review Form -->
+    {% if review.user == request.user %}
+        <form action="{% url 'edit_review' id=review.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Modifier la review</button>
+        </form>
+    {% endif %}
+</div>

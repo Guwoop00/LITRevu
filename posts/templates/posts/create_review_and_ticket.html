@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- Create a complete review -->
+    <h2>Créer une review complete</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ ticket_form.as_p }} <!-- Render ticket form -->
+        {{ review_form.as_p }} <!-- Render review form -->
+        <button type="submit">Enregistrer la review</button> <!-- Submit button -->
+    </form>
+{% endblock content %}

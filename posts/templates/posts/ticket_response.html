@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- Ticket response form -->
+    <h2>Répondre au ticket</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }} <!-- Render ticket response form fields -->
+        <button type="submit">Enregistrer la review</button> <!-- Submit button for saving the review -->
+    </form>
+{% endblock content %}

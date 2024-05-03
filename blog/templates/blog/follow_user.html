@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- Follow User Form -->
+    <h2>Follow a User</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Follow</button>
+    </form>
+
+    <!-- Users to Follow -->
+    <h2>Users to Follow</h2>
+    {% if users_to_follow %}
+        <ul>
+            {% for user in users_to_follow %}
+                <li>{{ user.username }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No users available to follow at the moment.</p>
+    {% endif %}
+
+    <!-- Followed Users -->
+    <h2>Users You Follow</h2>
+    {% if followed_users %}
+        <ul>
+            {% for user in followed_users %}
+                <li>{{ user.username }}</li>
+                <form method="post" action="{% url 'unfollow_user' user.username %}">
+                    {% csrf_token %}
+                    <button type="submit">Unfollow</button>
+                </form>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You are not following any users at the moment.</p>
+    {% endif %}
+
+    <!-- Followers -->
+    <h2>Followers</h2>
+    {% if followers %}
+        <ul>
+            {% for follower in followers %}
+                <li>{{ follower.username }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You have no followers at the moment.</p>
+    {% endif %}
+{% endblock content %}
+
+{% block scripts %}
+    <script>
+        $("#id_followed_user").select2();
+    </script>
+{% endblock %}

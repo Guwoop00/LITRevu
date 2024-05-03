@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LITRevu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <script  src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        {% if user.is_authenticated %}
+            <p>Vous êtes connecté en tant que {{ request.user }}.</p>
+            </form>
+            <div class="header-buttons">
+                <button onclick="window.location.href='{% url 'home' %}'" class="button1 bouncy">Feed</button>
+                <button onclick="window.location.href='{% url 'my_posts' %}'" class="button1 bouncy"style="animation-delay:0.07s">Mes posts</button>
+                <button onclick="window.location.href='{% url 'create_ticket' %}'" class="button1 bouncy" style="animation-delay:0.14s">Requête</button>
+                <button onclick="window.location.href='{% url 'create_review_and_ticket' %}'" class="button1 bouncy" style="animation-delay:0.21">Écrire une critique</button>
+                <button onclick="window.location.href='{% url 'password_change' %}'" class="button1 bouncy" style="animation-delay:0.28s">Changer votre mot de passe</button>
+                <button onclick="window.location.href='{% url 'follow_user' %}'" class="button1 bouncy" style="animation-delay:0.35s">Follows</button>
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="button1 bouncy" style="animation-delay:0.42s">Se déconnecter</button>
+                </form>
+            </div>
+        {% endif %}
+    </header> 
+
+    <div class ="content">
+        <h1>LITRevu</h1>
+        {% block content %}{% endblock content %}
+    </div>
+
+    {% block scripts %}
+
+    {% endblock %}
+
+
+</body>
+</html>

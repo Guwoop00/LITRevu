@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- Edit ticket form -->
+    <h2>Modifier le ticket</h2>
+    <form method="post" action="{% url 'edit_ticket' id=ticket.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }} <!-- Render ticket form fields -->
+        {{ delete_form.as_p }} <!-- Render delete form fields -->
+        <button type="submit" name="edit_ticket">Enregistrer les modifications</button> <!-- Submit button for editing -->
+        <button type="submit" name="delete_ticket">Supprimer le ticket</button> <!-- Submit button for deleting -->
+    </form>
+{% endblock content %}

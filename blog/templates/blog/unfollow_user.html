@@ -1,0 +1,5 @@
+<form method="post">
+    {% csrf_token %}
+    <p>Êtes-vous sûr de vouloir ne plus suivre {{ user_to_unfollow.username }} ?</p>
+    <button type="submit">Unfollow</button>
+</form>

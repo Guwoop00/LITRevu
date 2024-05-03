@@ -1,0 +1,25 @@
+<div class="ticket">
+    <h3>{{ ticket.title }}</h3>
+    {% if ticket.image %}
+        <img src="{{ ticket.image.url }}" alt="Image du ticket">
+    {% endif %}
+    <p>Description: {{ ticket.description }}</p>
+    <p>Utilisateur: {{ ticket.user }}</p>
+    <p>Créé le: {{ ticket.time_created }}</p>
+
+    <!-- Edit Ticket Form -->
+    {% if ticket.user == request.user and not ticket.review.exists %}
+        <form action="{% url 'edit_ticket' id=ticket.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Modifier le ticket</button>
+        </form>
+    {% endif %}
+
+    <!-- Respond to Ticket Form -->
+    {% if ticket.user != request.user and not ticket.review.exists %}
+        <form action="{% url 'ticket_response' id=ticket.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Répondre au ticket</button>
+        </form>
+    {% endif %}
+</div>

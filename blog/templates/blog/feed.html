@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Feed -->
+    <div class="posts">
+        <h2>Feed</h2>
+        <!-- Iterate over items in the feed -->
+        {% for item in feed %}
+            <div class="block_container">
+                <!-- Include ticket snippet -->
+                {% include 'blog/ticket_snippet.html' with ticket=item.ticket %}
+
+                <!-- Iterate over reviews for the current item -->
+                {% for review in item.reviews %}
+                    <!-- Include review snippet -->
+                    {% include 'blog/review_snippet.html' with review=review %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Signup Form -->
+    <h2>Inscrivez-vous</h2>
+    <form method="post">
+
+        <!-- Username Input -->
+        <div class="form-group">
+            <label for="id_username"></label><input type="text" name="username" id="id_username" placeholder="Nom d'utilisateur">
+        </div>
+
+        <!-- Password Input -->
+        <div class="form-group">
+            <label for="id_password1"></label><input type="password" name="password1" id="id_password1" placeholder="Mot de passe">
+        </div>
+
+        <!-- Confirm Password Input -->
+        <div class="form-group">
+            <label for="id_password2"></label><input type="password" name="password2" id="id_password2" placeholder="Confirmation du mot de passe">
+        </div>
+
+        <!-- CSRF Token -->
+        {% csrf_token %}
+        <!-- Submit Button -->
+        <button type="submit">S’inscrire</button>
+
+    </form>
+{% endblock content %}

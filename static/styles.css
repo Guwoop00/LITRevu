@@ -1,0 +1,119 @@
+/* Reset CSS */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 20px;
+}
+
+header {
+  background-color: lavender;
+  padding: 30px;
+  border: 5px solid #0f1111;
+  border-radius: 8px;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: flex-end; /* Alignement horizontal au centre */
+  align-items: center; /* Alignement vertical au centre */
+  flex-wrap: wrap; /* Pour gérer le cas où les boutons dépassent */
+  margin-top: 10px;
+}
+
+.header-buttons button {
+  margin: 5px; /* Marge entre les boutons */
+  border: 2px solid #0f1111;
+}
+
+header p {
+  text-align: right;
+  margin: 0px;
+}
+
+.content h1 {
+  font-family: "Righteous", sans-serif;
+  font-weight: 500;
+  font-size: 4em;
+  font-style: normal;
+  text-decoration: none;
+  color: indigo;
+}
+
+h2 {
+  font-size: 1em;
+}
+
+.bouncy {
+  animation: bouncy 5s infinite linear;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 200px;
+  height: 40px;
+}
+
+@keyframes bouncy {
+  0% { top: 0em }
+  40% { top: 0em }
+  43% { top: -0.9em }
+  46% { top: 0em }
+  48% { top: -0.4em }
+  50% { top: 0em }
+  100% { top: 0em; }
+}
+
+.bouncy:hover {
+  background-color: #f7fafa;
+}
+
+.bouncy:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+}
+
+.content {
+  margin-left: 20%;
+}
+
+.block_container {
+    border: 2px solid #0f1111;
+    margin-right: 20%;
+    padding: 10px; /* Ajoute un espace intérieur autour du contenu */
+    margin-bottom: 20px; /* Ajoute un espace en bas de chaque bloc */
+    background-color: lavender;
+    border-radius: 8px;
+}
+
+.ticket {
+    /* Styles spécifiques pour les tickets */
+    border: 1px solid #ccc; /* Ajoute une bordure solide autour de chaque bloc */
+    padding: 10px; /* Ajoute un espace intérieur autour du contenu */
+    margin-bottom: 20px; /* Ajoute un espace en bas de chaque bloc */
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #0f1111;
+    border-radius: 8px;
+}
+
+.block_container button {
+  margin: 5px; /* Marge entre les boutons */
+  border: 2px solid #0f1111;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+}

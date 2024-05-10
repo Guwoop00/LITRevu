@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <!-- Follow User Form -->
-    <h2>Follow a User</h2>
+    <h2>Suivre un utilisateur</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
@@ -9,7 +9,7 @@
     </form>
 
     <!-- Users to Follow -->
-    <h2>Users to Follow</h2>
+    <h2>Suggestions</h2>
     {% if users_to_follow %}
         <ul>
             {% for user in users_to_follow %}
@@ -21,7 +21,7 @@
     {% endif %}
 
     <!-- Followed Users -->
-    <h2>Users You Follow</h2>
+    <h2>Suivis</h2>
     {% if followed_users %}
         <ul>
             {% for user in followed_users %}
@@ -37,7 +37,7 @@
     {% endif %}
 
     <!-- Followers -->
-    <h2>Followers</h2>
+    <h2>Personnes qui vous suivent</h2>
     {% if followers %}
         <ul>
             {% for follower in followers %}

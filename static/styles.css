@@ -40,8 +40,13 @@ header p {
 }
 
 h2 {
-  font-size: 1em;
+  font-size: 1,5em;
+  font-family: 'Platypi', sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  color: indigo;
 }
+
 
 .bouncy {
   animation: bouncy 5s infinite linear;
@@ -95,25 +100,78 @@ h2 {
 .block_container {
     border: 2px solid #0f1111;
     margin-right: 20%;
-    padding: 10px; /* Ajoute un espace intérieur autour du contenu */
-    margin-bottom: 20px; /* Ajoute un espace en bas de chaque bloc */
+    padding: 10px;
+    margin-bottom: 20px;
     background-color: lavender;
     border-radius: 8px;
 }
 
 .ticket {
-    /* Styles spécifiques pour les tickets */
-    border: 1px solid #ccc; /* Ajoute une bordure solide autour de chaque bloc */
-    padding: 10px; /* Ajoute un espace intérieur autour du contenu */
-    margin-bottom: 20px; /* Ajoute un espace en bas de chaque bloc */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
     background-color: rgb(255, 255, 255);
     border: 2px solid #0f1111;
     border-radius: 8px;
 }
 
-.block_container button {
-  margin: 5px; /* Marge entre les boutons */
+button {
+  margin: 5px;
   border: 2px solid #0f1111;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
 }
+
+textarea, input[type="text"], input[type="password"] {
+  width: 25%;
+  height: 30px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
+  outline: none;
+  border-color: indigo;
+}
+
+#id_rating {
+  list-style: none;
+  padding: 0;
+}
+
+#id_rating li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#id_rating input[type="radio"] {
+  display: none;
+}
+
+#id_rating label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+#id_rating label span {
+  font-size: 16px;
+  color: #333;
+}
+
+#id_rating label:hover input[type="radio"] {
+  background-color: #f0f0f0;
+}
+
+#id_rating input[type="radio"]:checked + label {
+  font-weight: bold;
+  color: #007bff;
+}
+
+

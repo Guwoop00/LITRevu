@@ -20,7 +20,7 @@ class FollowUserForm(forms.ModelForm):
     def __init__(self, current_user, *args, **kwargs):
         """
         Initialize the form.
-        
+
         Args:
             current_user: The currently logged-in user.
             *args: Additional positional arguments.

@@ -54,8 +54,6 @@ def home(request: HttpRequest, feed_type: str = None) -> HttpResponse:
     return render(request, 'blog/feed.html', {'feed': feed})
 
 
-
-
 @login_required
 def follow_user(request: HttpRequest) -> HttpResponse:
     """

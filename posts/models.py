@@ -1,7 +1,6 @@
 from django.db import models
 from django.conf import settings
 from PIL import Image
-from django.core.validators import MaxValueValidator, MinValueValidator
 from typing import Union
 
 
@@ -42,8 +41,7 @@ class Review(models.Model):
     """Model representing a review."""
 
     ticket: Ticket = models.ForeignKey(to=Ticket, on_delete=models.CASCADE, related_name='review')
-    rating: int = models.PositiveSmallIntegerField(
-        validators=[MinValueValidator(0), MaxValueValidator(5)])
+    rating: int = models.PositiveSmallIntegerField()
     user = models.ForeignKey(
         to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='reviews')
     headline: str = models.CharField(max_length=128)

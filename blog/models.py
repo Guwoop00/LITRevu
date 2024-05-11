@@ -9,7 +9,8 @@ class UserFollows(models.Model):
     """
 
     user: Any = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='following')
-    followed_user: Any = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='followed_by')
+    followed_user: Any = models.ForeignKey(settings.AUTH_USER_MODEL,
+                                           on_delete=models.CASCADE, related_name='followed_by')
 
     class Meta:
         """

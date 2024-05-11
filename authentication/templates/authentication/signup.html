@@ -3,6 +3,11 @@
 {% block content %}
     <!-- Signup Form -->
     <h2>Inscrivez-vous</h2>
+
+    {% if form.errors %}
+        {{ form.errors }}
+    {% endif %}
+
     <form method="post">
 
         <!-- Username Input -->

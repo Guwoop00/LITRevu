@@ -10,5 +10,3 @@ class TicketAdmin(admin.ModelAdmin):
 
 admin.site.register(Ticket, TicketAdmin)
 admin.site.register(Review, TicketAdmin)
-
-

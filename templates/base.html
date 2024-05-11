@@ -19,15 +19,15 @@
         {% if user.is_authenticated %}
             <p>Vous êtes connecté en tant que {{ request.user }}.</p>
             <div class="header-buttons">
-                <button onclick="window.location.href='{% url 'home' %}'" class="button1 bouncy">Feed</button>
-                <button onclick="window.location.href='{% url 'my_posts' %}'" class="button1 bouncy" style="animation-delay:0.07s">Mes posts</button>
-                <button onclick="window.location.href='{% url 'create_ticket' %}'" class="button1 bouncy" style="animation-delay:0.14s">Requête</button>
-                <button onclick="window.location.href='{% url 'create_review_and_ticket' %}'" class="button1 bouncy" style="animation-delay:0.21s">Écrire une critique</button>
-                <button onclick="window.location.href='{% url 'password_change' %}'" class="button1 bouncy" style="animation-delay:0.28s">Changer votre mot de passe</button>
-                <button onclick="window.location.href='{% url 'follow_user' %}'" class="button1 bouncy" style="animation-delay:0.35s">Follows</button>                
+                <a href="{% url 'home' %}" class="button1 bouncy">Feed</a>
+                <a href="{% url 'my_posts' %}" class="button1 bouncy" style="animation-delay:0.07s">Mes posts</a>
+                <a href="{% url 'create_ticket' %}" class="button1 bouncy" style="animation-delay:0.14s">Requête</a>
+                <a href="{% url 'create_review_and_ticket' %}" class="button1 bouncy" style="animation-delay:0.21s">Écrire une critique</a>
+                <a href="{% url 'password_change' %}" class="button1 bouncy" style="animation-delay:0.28s">Changer votre mot de passe</a>
+                <a href="{% url 'follow_user' %}" class="button1 bouncy" style="animation-delay:0.35s">Follows</a>     
                 <form action="{% url 'logout' %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" class="button1 bouncy" style="animation-delay:0.42s">Se déconnecter</button>
+                    <a href="{% url 'logout' %}" class="button1 bouncy" style="animation-delay:0.42s">Se déconnecter</a>
                 </form>
             </div>
         {% endif %}

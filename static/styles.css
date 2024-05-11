@@ -48,17 +48,16 @@ h2 {
 }
 
 
-.bouncy {
-  animation: bouncy 5s infinite linear;
-  position: relative;
+a.button1 {
+  /* Styles communs */
+  margin: 5px;
+  border: 2px solid #0f1111;
+  display: inline-block;
   background-color: #fff;
-  border: 1px solid #d5d9d9;
   border-radius: 8px;
   box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
-  box-sizing: border-box;
   color: #0f1111;
   cursor: pointer;
-  display: inline-block;
   font-size: 13px;
   line-height: 29px;
   padding: 0 10px 0 11px;
@@ -83,11 +82,11 @@ h2 {
   100% { top: 0em; }
 }
 
-.bouncy:hover {
+a.button1:hover {
   background-color: #f7fafa;
 }
 
-.bouncy:focus {
+a.button1:focus {
   border-color: #008296;
   box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
   outline: 0;
@@ -173,5 +172,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
   font-weight: bold;
   color: #007bff;
 }
+
+
 
 

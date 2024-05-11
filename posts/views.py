@@ -30,8 +30,6 @@ def ticket_response(request: HttpRequest, id: int) -> HttpResponse:
 @login_required
 def create_review_and_ticket(request: HttpRequest) -> HttpResponse:
     """View for creating a review and a ticket."""
-    review_form = ReviewForm()
-    ticket_form = TicketForm()
     if request.method == 'POST':
         review_form = ReviewForm(request.POST)
         ticket_form = TicketForm(request.POST, request.FILES)
@@ -44,6 +42,10 @@ def create_review_and_ticket(request: HttpRequest) -> HttpResponse:
             review.ticket = ticket
             review.save()
             return redirect('home')
+    else:
+        review_form = ReviewForm()
+        ticket_form = TicketForm()
+
     context = {
         'review_form': review_form,
         'ticket_form': ticket_form,

@@ -14,15 +14,10 @@ header {
 
 .header-buttons {
   display: flex;
-  justify-content: flex-end; /* Alignement horizontal au centre */
+  justify-content: center; /* Alignement horizontal au centre */
   align-items: center; /* Alignement vertical au centre */
   flex-wrap: wrap; /* Pour gérer le cas où les boutons dépassent */
   margin-top: 10px;
-}
-
-.header-buttons button {
-  margin: 5px; /* Marge entre les boutons */
-  border: 2px solid #0f1111;
 }
 
 header p {
@@ -40,47 +35,32 @@ header p {
 }
 
 h2 {
-  font-size: 1,5em;
+  font-size: 1.5em;
   font-family: 'Platypi', sans-serif;
   font-weight: 600;
   font-style: italic;
   color: indigo;
 }
 
-
 a.button1 {
   /* Styles communs */
   margin: 5px;
   border: 2px solid #0f1111;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
   color: #0f1111;
   cursor: pointer;
   font-size: 13px;
-  line-height: 29px;
-  padding: 0 10px 0 11px;
-  position: relative;
   text-align: center;
   text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
   width: 200px;
   height: 40px;
 }
 
-@keyframes bouncy {
-  0% { top: 0em }
-  40% { top: 0em }
-  43% { top: -0.9em }
-  46% { top: 0em }
-  48% { top: -0.4em }
-  50% { top: 0em }
-  100% { top: 0em; }
-}
 
 a.button1:hover {
   background-color: #f7fafa;
@@ -172,7 +152,3 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
   font-weight: bold;
   color: #007bff;
 }
-
-
-
-

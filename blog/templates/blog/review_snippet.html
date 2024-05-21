@@ -1,11 +1,10 @@
 <div class="review">
     <!-- Presentation -->
-    <h3>{{ review.ticket.title }}</h3>
-    <p>Review Title: {{ review.headline }}</p>
-    <p>Review Body: {{ review.body }}</p>
-    <p>Rating: {{ review.rating }}</p>
-    <p>User: {{ review.user }}</p>
-    <p>Created on: {{ review.time_created }}</p>
+    <h3>{{ review.headline }}</h3>
+    <p>Commentaire: {{ review.body }}</p>
+    <p>Note: {{ review.rating }}/5</p>
+    <p>Utilisateur: {{ review.user }}</p>
+    <p>Crée le: {{ review.time_created }}</p>
     
     <!-- Edit Review Form -->
     {% if review.user == request.user %}

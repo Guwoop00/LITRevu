@@ -100,23 +100,33 @@ def edit_review(request: HttpRequest, id: int) -> HttpResponse:
     review = get_object_or_404(Review, id=id)
     ticket = review.ticket
     review_form = ReviewForm(instance=review)
-    ticket_form = TicketForm(instance=ticket)
     delete_form = DeleteReviewForm()
+
+    # Seuls les utilisateurs qui ont créé le ticket peuvent le modifier
+    if request.user == ticket.user:
+        ticket_form = TicketForm(instance=ticket)
+    else:
+        ticket_form = None
 
     if request.method == 'POST':
         if 'edit_review' in request.POST:
             review_form = ReviewForm(request.POST, request.FILES, instance=review)
-            ticket_form = TicketForm(request.POST, request.FILES, instance=ticket)
-            if all([review_form.is_valid(), ticket_form.is_valid()]):
+            if ticket_form:  # Ticket form only exists if the user created the ticket
+                ticket_form = TicketForm(request.POST, request.FILES, instance=ticket)
+            if all([review_form.is_valid(), (ticket_form is None or ticket_form.is_valid())]):
                 review_form.save()
-                ticket_form.save()
+                if ticket_form:
+                    ticket_form.save()
                 return redirect('home')
         elif 'delete_review' in request.POST:
             delete_form = DeleteReviewForm(request.POST)
             if delete_form.is_valid():
                 review.delete()
-                ticket.delete()
+                # Supprimer le ticket seulement si l'utilisateur l'a créé
+                if request.user == ticket.user:
+                    ticket.delete()
                 return redirect('home')
+
     context = {
         'review_form': review_form,
         'ticket_form': ticket_form,

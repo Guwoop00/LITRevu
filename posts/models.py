@@ -32,10 +32,6 @@ class Ticket(models.Model):
         super().save(*args, **kwargs)
         self.resize_image()
 
-    def has_been_reviewed(self) -> bool:
-        """Check if the ticket has been reviewed."""
-        return self.review.exists()
-
 
 class Review(models.Model):
     """Model representing a review."""

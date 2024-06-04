@@ -4,7 +4,7 @@
     <h2>Créer un ticket</h2>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }} <!-- Render form fields -->
+        {{ form.as_p }}
         <button type="submit">Enregistrer le ticket</button> <!-- Submit button -->
     </form>
 {% endblock content %}

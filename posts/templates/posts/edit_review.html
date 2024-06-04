@@ -4,10 +4,10 @@
     <h2>Modifier la critique</h2>
     <form method="post" action="{% url 'edit_review' id=review.id %}" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ ticket_form.as_p }} <!-- Render ticket form fields -->
-        {{ review_form.as_p }} <!-- Render review form fields -->
-        {{ delete_form.as_p }} <!-- Render delete form fields -->
-        <button type="submit" name="edit_review">Enregistrer les modifications</button> <!-- Submit button for editing -->
-        <button type="submit" name="delete_review">Supprimer le ticket</button> <!-- Submit button for deleting -->
+        {{ ticket_form.as_p }}
+        {{ review_form.as_p }}
+        {{ delete_form.as_p }}
+        <button type="submit" name="edit_review">Enregistrer les modifications</button>
+        <button type="submit" name="delete_review">Supprimer la review</button>
     </form>
 {% endblock content %}

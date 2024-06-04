@@ -9,12 +9,12 @@ User: Any = get_user_model()
 class TicketForm(forms.ModelForm):
     """Form for creating or editing a ticket."""
     class Meta:
-        model: Any = Ticket
-        fields: Any = ['title', 'description', 'image']
-        widgets: Any = {
-            "description": forms.Textarea(attrs={'rows': 6}),
+        model = Ticket
+        fields = ['title', 'description', 'image']
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 6}),
         }
-        labels: Any = {
+        labels = {
             'title': 'Titre du livre',
         }
 
